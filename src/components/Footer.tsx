@@ -2,11 +2,15 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Footer() {
+interface FooterProps {
+  overlap?: boolean;
+}
+
+export default function Footer({ overlap }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#f0f4f8] pt-32 pb-10 -mt-24 relative z-0">
+    <footer className={`bg-[#f0f4f8] pb-10 relative z-0 ${overlap ? 'pt-32 -mt-24' : 'pt-16 mt-0'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
@@ -23,9 +27,9 @@ export default function Footer() {
             <h5 className="font-bold text-gray-900 uppercase text-sm tracking-wider mb-4">Quick Links</h5>
             <ul className="space-y-3">
               <li><Link href="/" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">Home</Link></li>
-              <li><Link href="#about" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">About Us</Link></li>
-              <li><Link href="#services" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">Services</Link></li>
-              <li><Link href="#careers" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">Careers</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">About Us</Link></li>
+              <li><Link href="/services" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">Services</Link></li>
+              <li><Link href="/careers" className="text-gray-600 hover:text-[#800000] text-sm transition-colors">Careers</Link></li>
             </ul>
           </div>
 

@@ -4,19 +4,19 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[80vh] min-h-150 md:min-h-150 flex items-center justify-center">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: "url('/assets/images/hero-port.jpg')", 
+        style={{
+          backgroundImage: "url('/assets/images/hero-port.jpg')",
         }}
       >
-        {/* Subtle dark overlay to ensure the white card pops out */}
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/50"></div>
+        {/* Deep maroon/dark gradient overlay to match other pages */}
+        <div className="absolute inset-0  bg-gradient-to-r from-black/80 to-[#450404ff]/50"></div>
       </div>
 
-      {/* Center Content Card - Using specific HCI spacing and contrast principles */}
-      <div className="relative z-10 bg-white/5 backdrop-blur-md p-6 sm:p-8 md:p-12 rounded-xl shadow-2xl w-[90%] max-w-4xl mx-auto text-center transform transition-all border border-white/10">
-        
+      {/* Center Content Section */}
+      <div className="relative z-10 max-w-4xl mx-auto w-full text-center px-4 sm:px-6 lg:px-8">
+
         {/* Small Tagline */}
         <span className="inline-block py-1.5 px-4 rounded-full bg-orange-100/30 text-white border border-white/20 text-xs font-bold tracking-widest uppercase mb-5">
           Global Trade Excellence
@@ -34,14 +34,14 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-5">
-          <Link 
-            href="#quote" 
+          <Link
+            href="/quote"
             className="w-full sm:w-auto bg-[#800000] hover:bg-[#5a0000] transition-all duration-300 ease-in-out hover:-translate-y-1 text-white px-8 py-3.5 rounded-md font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000] focus:ring-offset-transparent"
           >
             Get a Quote
           </Link>
-          <Link 
-            href="#services" 
+          <Link
+            href="/services"
             className="w-full sm:w-auto bg-white/10 hover:bg-white/20 transition-all duration-300 ease-in-out hover:-translate-y-1 text-white border border-white/30 px-8 py-3.5 rounded-md font-semibold shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/30 focus:ring-offset-transparent"
           >
             Our Services

@@ -1,9 +1,9 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import CoreServices from './components/CoreServices';
-import WhyDeoVox from './components/WhyDeoVox';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import CoreServices from '../components/CoreServices';
+import WhyDeoVox from '../components/WhyDeoVox';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <CoreServices />
       <WhyDeoVox />
       <ContactSection />
-      <Footer />
+      <Footer overlap={true} />
     </main>
   );
 }

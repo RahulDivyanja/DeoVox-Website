@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 
 export default function ContactSection() {
   return (
@@ -67,26 +68,62 @@ export default function ContactSection() {
 
           {/* Right Side: Form & Map (White Background) */}
           <div className="lg:w-2/3 p-10 lg:p-12 flex flex-col justify-between">
-            {/* Contact Form */}
-            <form className="mb-10" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="name" className="sr-only">Name</label>
-                  <input type="text" id="name" placeholder="Your Name" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all text-gray-800" required />
-                </div>
-                <div>
-                  <label htmlFor="email" className="sr-only">Email</label>
-                  <input type="email" id="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all text-gray-800" required />
+            {/* How It Works Section */}
+            <div className="mb-10">
+              <h3 className="text-3xl font-extrabold text-[#800000] mb-8">How It Works</h3>
+              
+              <div className="relative">
+                {/* Vertical Timeline Line */}
+                <div className="absolute left-6 sm:left-7 top-6 sm:top-7 bottom-6 sm:bottom-7 w-0.5 bg-gray-200"></div>
+
+                <div className="space-y-10">
+                  {/* Step 1 */}
+                  <div className="flex items-start gap-6 relative">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gray-300 bg-white flex items-center justify-center shrink-0 z-10 shadow-sm">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 pt-1.5 sm:pt-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">1. Submit Requirements</h4>
+                      <p className="text-gray-600 text-sm sm:text-base mb-3 leading-relaxed">Tell us about your cargo and destination.</p>
+                      <Link
+                        href="/quote"
+                        className="inline-block bg-[#4a0000] hover:bg-[#300000] text-white px-6 py-2 rounded-md font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
+                      >
+                        Get a Quote
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="flex items-start gap-6 relative">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gray-300 bg-white flex items-center justify-center shrink-0 z-10 shadow-sm">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 pt-1.5 sm:pt-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">2. Expert Route & Cost Analysis</h4>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Our specialists design the most efficient logistics path and provide transparent pricing.</p>
+                    </div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="flex items-start gap-6 relative">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gray-300 bg-white flex items-center justify-center shrink-0 z-10 shadow-sm">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 pt-1.5 sm:pt-2">
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">3. Global Freight Execution</h4>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">We manage the entire journey from origin to destination with real-time tracking.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="mb-6">
-                <label htmlFor="message" className="sr-only">Message</label>
-                <textarea id="message" rows={4} placeholder="How can we help you?" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all text-gray-800 resize-none" required></textarea>
-              </div>
-              <button type="submit" className="bg-[#800000] hover:bg-[#5a0000] text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 shadow-md hover:shadow-lg focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]">
-                Send Message
-              </button>
-            </form>
+            </div>
 
             {/* Map iframe Embed (Sharjah UAE Focus) */}
             <div className="w-full h-64 bg-gray-200 rounded-md overflow-hidden shadow-inner border border-gray-200">

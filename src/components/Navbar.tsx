@@ -3,9 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -24,19 +27,19 @@ export default function Navbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-8 md:text-sm lg:text-lg font-medium">
-            <Link href="/" className="text-gray-900 font-medium  border-b-2 border-[#800000] px-1 py-2">
+            <Link href="/" className={`${isActive('/') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000]'} px-1 py-2 transition-all duration-200`}>
               Home
             </Link>
-            <Link href="#about" className="text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50 transition-all duration-200 px-1 py-2">
+            <Link href="/about" className={`${isActive('/about') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
               About Us
             </Link>
-            <Link href="#services" className="text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50 transition-all duration-200 px-1 py-2">
+            <Link href="/services" className={`${isActive('/services') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
               Services
             </Link>
-            <Link href="#careers" className="text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50 transition-all duration-200 px-1 py-2">
+            <Link href="/careers" className={`${isActive('/careers') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
               Careers
             </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50 transition-all duration-200 px-1 py-2">
+            <Link href="/contact" className={`${isActive('/contact') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
               Contact
             </Link>
           </div>
@@ -44,7 +47,7 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden md:flex items-center">
             <Link 
-              href="#quote" 
+              href="/quote" 
               className="bg-[#800000] hover:bg-[#5a0000] md:text-sm lg:text-lg text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
             >
               Get a Quote
@@ -82,35 +85,35 @@ export default function Navbar() {
             <Link 
               href="/" 
               onClick={toggleMobileMenu}
-              className="text-[#800000] font-medium bg-red-50 block px-3 py-3 rounded-md"
+              className={`${isActive('/') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Home
             </Link>
             <Link 
-              href="#about" 
+              href="/about" 
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-[#800000] hover:bg-gray-50 block px-3 py-3 rounded-md font-medium transition-colors"
+              className={`${isActive('/about') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               About Us
             </Link>
             <Link 
-              href="#services" 
+              href="/services" 
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-[#800000] hover:bg-gray-50 block px-3 py-3 rounded-md font-medium transition-colors"
+              className={`${isActive('/services') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Services
             </Link>
             <Link 
-              href="#careers" 
+              href="/careers" 
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-[#800000] hover:bg-gray-50 block px-3 py-3 rounded-md font-medium transition-colors"
+              className={`${isActive('/careers') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Careers
             </Link>
             <Link 
-              href="#contact" 
+              href="/contact" 
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-[#800000] hover:bg-gray-50 block px-3 py-3 rounded-md font-medium transition-colors"
+              className={`${isActive('/contact') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Contact
             </Link>
@@ -118,7 +121,7 @@ export default function Navbar() {
             {/* Mobile CTA Button */}
             <div className="mt-4 pt-4 border-t border-gray-100">
               <Link 
-                href="#quote" 
+                href="/quote" 
                 onClick={toggleMobileMenu}
                 className="w-full text-center block bg-[#800000] hover:bg-[#5a0000] text-white px-6 py-3 rounded-md font-medium transition-colors shadow-sm"
               >
