@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
+      <body suppressHydrationWarning className={inter.className}>
         {children}
         <Toaster position="top-right" containerClassName="react-hot-toast-container" toastOptions={{ duration: 4000 }} />
         <WhatsAppButton />
