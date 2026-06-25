@@ -39,22 +39,22 @@ export default function QuotePage() {
       const remaining = cooldownDuration - timePassed;
 
       if (remaining > 0) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCooldownTime(Math.ceil(remaining / 1000));
       }
     }
+  }, []);
 
-    const interval = setInterval(() => {
-      setCooldownTime((prev) => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          return 0;
-        }
-        return prev - 1;
-      });
+  // Manage the cooldown interval
+  useEffect(() => {
+    if (cooldownTime <= 0) return;
+
+    const timer = setInterval(() => {
+      setCooldownTime((prev) => prev - 1);
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timer);
+  }, [cooldownTime]);
 
   // Handle input changes
   const handleChange = (
@@ -127,8 +127,9 @@ export default function QuotePage() {
       // Start 60-second cooldown and save to localStorage
       setCooldownTime(60);
       localStorage.setItem("lastQuoteSubmit", Date.now().toString());
-    } catch (error: any) {
-      toast.error(error.message || "Something went wrong. Please try again.");
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      toast.error(errorMessage);
       setCaptchaToken(null);
       turnstileRef.current?.reset();
     } finally {

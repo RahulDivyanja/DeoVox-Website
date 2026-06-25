@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
@@ -37,22 +35,22 @@ export default function ContactPage() {
       const remaining = cooldownDuration - timePassed;
 
       if (remaining > 0) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCooldownTime(Math.ceil(remaining / 1000));
       }
     }
+  }, []);
 
-    const interval = setInterval(() => {
-      setCooldownTime((prev) => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          return 0;
-        }
-        return prev - 1;
-      });
+  // Manage the cooldown interval
+  useEffect(() => {
+    if (cooldownTime <= 0) return;
+
+    const timer = setInterval(() => {
+      setCooldownTime((prev) => prev - 1);
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timer);
+  }, [cooldownTime]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,8 +102,9 @@ export default function ContactPage() {
       // Cooldown setup
       setCooldownTime(60);
       localStorage.setItem("lastContactSubmit", Date.now().toString());
-    } catch (error: any) {
-      toast.error(error.message || "Something went wrong. Please try again.");
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      toast.error(errorMessage);
       setCaptchaToken(null);
       turnstileRef.current?.reset();
     } finally {
