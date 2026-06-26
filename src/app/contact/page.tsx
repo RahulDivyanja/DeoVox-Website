@@ -244,8 +244,8 @@ export default function ContactPage() {
                     {isSubmitting
                       ? "Sending..."
                       : cooldownTime > 0
-                      ? `Please wait ${cooldownTime}s`
-                      : "Send Inquiry"}
+                        ? `Please wait ${cooldownTime}s`
+                        : "Send Inquiry"}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
@@ -337,11 +337,10 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6">Our Operations Maps</h3>
 
-            {/* Map Toggle Buttons */}
-            <div className="inline-flex bg-white p-1.5 rounded-full shadow-sm border border-gray-200 mb-8">
+            <div className="flex flex-col sm:inline-flex sm:flex-row bg-white p-1.5 rounded-xl sm:rounded-full shadow-sm border border-gray-200 mb-8 w-full sm:w-auto gap-2 sm:gap-0">
               <button
                 onClick={() => setActiveMap('sharjah')}
-                className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-200 ${activeMap === 'sharjah'
+                className={`w-full sm:w-auto px-6 py-2.5 rounded-lg sm:rounded-full font-bold text-sm transition-all duration-200 ${activeMap === 'sharjah'
                   ? 'bg-[#800000] text-white shadow-sm'
                   : 'text-gray-600 hover:text-[#800000]'
                   }`}
@@ -350,7 +349,7 @@ export default function ContactPage() {
               </button>
               <button
                 onClick={() => setActiveMap('colombo')}
-                className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-200 ${activeMap === 'colombo'
+                className={`w-full sm:w-auto px-6 py-2.5 rounded-lg sm:rounded-full font-bold text-sm transition-all duration-200 ${activeMap === 'colombo'
                   ? 'bg-[#800000] text-white shadow-sm'
                   : 'text-gray-600 hover:text-[#800000]'
                   }`}
@@ -363,7 +362,7 @@ export default function ContactPage() {
             <div className="w-full h-[450px] bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200/50">
               {activeMap === 'sharjah' ? (
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.3117498425514!2d55.485122176081395!3d25.32731112620786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f72cf7f28a5%3A0xe54fbdbd574fcca5!2sSharjah%20International%20Airport%20Free%20Zone%20(SAIF%20Zone)!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+                  src="https://www.google.com/maps?q=25.3199091,55.4585985&z=17&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
