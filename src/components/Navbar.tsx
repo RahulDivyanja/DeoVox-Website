@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,28 +18,50 @@ export default function Navbar() {
     <nav className="relative top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-
           {/* Logo Section */}
           <div className="shrink-0 flex flex-row items-center gap-2 cursor-pointer">
-            <Image src="/assets/images/DeoVox-Icon.jpeg" alt="Deo Vox Logo" width={40} height={40} className="rounded-sm" />
-            <span className="font-bold text-xl text-gray-900 tracking-tight">Deo Vox</span>
+            <Image
+              src="/assets/images/DeoVox-Icon.jpeg"
+              alt="Deo Vox Logo"
+              width={40}
+              height={40}
+              className="rounded-sm"
+            />
+            <span className="font-bold text-xl text-gray-900 tracking-tight">
+              Deo Vox
+            </span>
           </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-8 md:text-sm lg:text-lg font-medium">
-            <Link href="/" className={`${isActive('/') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000]'} px-1 py-2 transition-all duration-200`}>
+            <Link
+              href="/"
+              className={`${isActive("/") ? "text-[#800000] border-b-2 border-[#800000]" : "text-gray-600 hover:text-[#800000]"} px-1 py-2 transition-all duration-200`}
+            >
               Home
             </Link>
-            <Link href="/about" className={`${isActive('/about') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
+            <Link
+              href="/about"
+              className={`${isActive("/about") ? "text-[#800000] border-b-2 border-[#800000]" : "text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50"} px-1 py-2 transition-all duration-200`}
+            >
               About Us
             </Link>
-            <Link href="/services" className={`${isActive('/services') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
+            <Link
+              href="/services"
+              className={`${isActive("/services") ? "text-[#800000] border-b-2 border-[#800000]" : "text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50"} px-1 py-2 transition-all duration-200`}
+            >
               Services
             </Link>
-            <Link href="/careers" className={`${isActive('/careers') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
+            <Link
+              href="/careers"
+              className={`${isActive("/careers") ? "text-[#800000] border-b-2 border-[#800000]" : "text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50"} px-1 py-2 transition-all duration-200`}
+            >
               Careers
             </Link>
-            <Link href="/contact" className={`${isActive('/contact') ? 'text-[#800000] border-b-2 border-[#800000]' : 'text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50'} px-1 py-2 transition-all duration-200`}>
+            <Link
+              href="/contact"
+              className={`${isActive("/contact") ? "text-[#800000] border-b-2 border-[#800000]" : "text-gray-600 hover:text-[#800000] hover:border-b-2 hover:border-[#800000]/50"} px-1 py-2 transition-all duration-200`}
+            >
               Contact
             </Link>
           </div>
@@ -48,7 +70,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/quote"
-              className="bg-[#800000] hover:bg-[#5a0000] md:text-sm lg:text-lg text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
+              className="bg-[#800000] hover:bg-[#5a0000] md:text-[0.9rem] lg:text-[1rem] text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000]"
             >
               Get a Quote
             </Link>
@@ -63,18 +85,39 @@ export default function Navbar() {
             >
               {isMobileMenuOpen ? (
                 // Close (X) Icon
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
                 // Hamburger (Three Lines) Icon
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -85,35 +128,35 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={toggleMobileMenu}
-              className={`${isActive('/') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
+              className={`${isActive("/") ? "text-[#800000] bg-red-50" : "text-gray-600 hover:text-[#800000] hover:bg-gray-50"} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Home
             </Link>
             <Link
               href="/about"
               onClick={toggleMobileMenu}
-              className={`${isActive('/about') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
+              className={`${isActive("/about") ? "text-[#800000] bg-red-50" : "text-gray-600 hover:text-[#800000] hover:bg-gray-50"} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               About Us
             </Link>
             <Link
               href="/services"
               onClick={toggleMobileMenu}
-              className={`${isActive('/services') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
+              className={`${isActive("/services") ? "text-[#800000] bg-red-50" : "text-gray-600 hover:text-[#800000] hover:bg-gray-50"} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Services
             </Link>
             <Link
               href="/careers"
               onClick={toggleMobileMenu}
-              className={`${isActive('/careers') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
+              className={`${isActive("/careers") ? "text-[#800000] bg-red-50" : "text-gray-600 hover:text-[#800000] hover:bg-gray-50"} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Careers
             </Link>
             <Link
               href="/contact"
               onClick={toggleMobileMenu}
-              className={`${isActive('/contact') ? 'text-[#800000] bg-red-50' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-50'} block px-3 py-3 rounded-md font-medium transition-colors`}
+              className={`${isActive("/contact") ? "text-[#800000] bg-red-50" : "text-gray-600 hover:text-[#800000] hover:bg-gray-50"} block px-3 py-3 rounded-md font-medium transition-colors`}
             >
               Contact
             </Link>
