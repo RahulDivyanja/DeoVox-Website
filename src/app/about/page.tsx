@@ -1,8 +1,13 @@
 import React from 'react';
-import Image from 'next/image';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Founded on reliability and precision, Deo Vox General Trading FZC LLC bridges emerging markets and international trade hubs with world-class logistics.',
+};
 
 export default function AboutPage() {
     return (

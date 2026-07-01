@@ -1,19 +1,17 @@
-"use client";
-
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+import DownloadPDFButton from '@/src/components/DownloadPDFButton';
+
+export const metadata: Metadata = {
+  title: 'Our Services',
+  description: 'Explore the full spectrum of Deo Vox trade and logistics services, including import/export forwarding, product sourcing, trade consultancy, and supply chain operations.',
+};
 
 export default function ServicesPage() {
-  // Smooth scroll handler
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -50,65 +48,65 @@ export default function ServicesPage() {
         <section className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-              <button
-                onClick={() => scrollToSection('import-export')}
+              <a
+                href="#import-export"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
                 <span className="truncate">Import & Export</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection('product-sourcing')}
+              <a
+                href="#product-sourcing"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span className="truncate">Product Sourcing</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection('general-trading')}
+              <a
+                href="#general-trading"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 <span className="truncate">General Trading</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection('consultancy')}
+              <a
+                href="#consultancy"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="truncate">Consultancy</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection('supply-chain')}
+              <a
+                href="#supply-chain"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
                 <span className="truncate">Supply Chain</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection('logistics')}
+              <a
+                href="#logistics"
                 className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-[#800000] hover:text-[#800000] hover:shadow-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5 text-[#800000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
                 <span className="truncate">Logistics</span>
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -388,12 +386,7 @@ export default function ServicesPage() {
                   >
                     Schedule a Review
                   </Link>
-                  <button
-                    onClick={() => alert("Services PDF download placeholder")}
-                    className="bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 px-8 py-3.5 rounded-md font-bold text-sm text-center transition-colors shadow-sm"
-                  >
-                    Download Services PDF
-                  </button>
+                  <DownloadPDFButton />
                 </div>
               </div>
 

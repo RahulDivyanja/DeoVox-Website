@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 export default function WhyDeoVox() {
   return (
@@ -31,7 +30,7 @@ export default function WhyDeoVox() {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Regional Expertise</h4>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Regional Expertise</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Dominating national economy through localized intelligence and global standards.
                   </p>
@@ -48,7 +47,7 @@ export default function WhyDeoVox() {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Operational Agility</h4>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Operational Agility</h3>
                   <p className="text-gray-600 leading-relaxed">
                     Rapid response systems to navigate the dynamic complexities of international freight.
                   </p>

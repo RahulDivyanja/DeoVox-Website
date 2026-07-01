@@ -1,17 +1,21 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[80vh] min-h-150 md:min-h-150 flex items-center justify-center">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/images/hero-port.jpg')",
-        }}
-      >
+    <section className="relative w-full h-[80vh] min-h-37.5 md:min-h-37.5 flex items-center justify-center">
+      
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/assets/images/hero-port.jpg"
+          alt="Deo Vox Global Trade Operations"
+          fill
+          className="object-cover object-center"
+          priority={true} 
+        />
         {/* Deep maroon/dark gradient overlay to match other pages */}
-        <div className="absolute inset-0  bg-gradient-to-r from-black/80 to-[#450404ff]/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-[#450404ff]/50"></div>
       </div>
 
       {/* Center Content Section */}

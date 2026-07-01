@@ -12,7 +12,7 @@ export default function ContactSection() {
           {/* Left Side: Contact Information (Maroon Background) */}
           <div className="lg:w-1/3 bg-[#800000] text-white p-10 lg:p-12 flex flex-col justify-between">
             <div>
-              <h3 className="text-3xl font-extrabold mb-8">Get in Touch</h3>
+              <h2 className="text-3xl font-extrabold mb-8">Get in Touch</h2>
 
               <div className="space-y-8">
                 {/* Office Address */}
@@ -135,9 +135,9 @@ export default function ContactSection() {
           <div className="lg:w-2/3 p-10 lg:p-12 flex flex-col justify-between">
             {/* How It Works Section */}
             <div className="mb-10">
-              <h3 className="text-3xl font-extrabold text-[#800000] mb-8">
+              <h2 className="text-3xl font-extrabold text-[#800000] mb-8">
                 How It Works
-              </h3>
+              </h2>
 
               <div className="relative">
                 {/* Vertical Timeline Line */}
@@ -162,9 +162,9 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="flex-1 pt-1.5 sm:pt-2">
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                         1. Submit Requirements
-                      </h4>
+                      </h3>
                       <p className="text-gray-600 text-sm sm:text-base mb-3 leading-relaxed">
                         Tell us about your cargo and destination.
                       </p>
@@ -195,9 +195,9 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="flex-1 pt-1.5 sm:pt-2">
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                         2. Expert Route & Cost Analysis
-                      </h4>
+                      </h3>
                       <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                         Our specialists design the most efficient logistics path
                         and provide transparent pricing.
@@ -223,9 +223,9 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="flex-1 pt-1.5 sm:pt-2">
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                         3. Global Freight Execution
-                      </h4>
+                      </h3>
                       <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                         We manage the entire journey from origin to destination
                         with real-time tracking.
